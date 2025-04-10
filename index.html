@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danyal Yaqoob - CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0275d8;
+            --secondary-color: #f8f9fa;
+            --text-dark: #343a40;
+            --text-light: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #f5f5f5;
+        }
+        
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .job-period {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .skill-item {
+            background-color: var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .certificate-img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .progress {
+            height: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .qualification {
+            margin-bottom: 1.5rem;
+        }
+        
+        #header {
+            background: linear-gradient(135deg, #0275d8 0%, #0099ff 100%);
+            padding: 6rem 0;
+            color: white;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header-name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .header-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-icon {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 99;
+        }
+        
+        .form-loading {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .form-success {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            color: #28a745;
+        }
+        
+        .form-error {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Danyal Yaqoob</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#interests">Interests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Certificates</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="header" class="text-center">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-name">Danyal Yaqoob</h1>
+                <h2 class="header-title">IT Professional & Security Specialist</h2>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#contact" class="btn btn-light px-4 py-2">Contact Me</a>
+                    <a href="#experience" class="btn btn-outline-light px-4 py-2">View Experience</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <img src="/api/placeholder/400/400" alt="Danyal Yaqoob" class="profile-image">
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="section-title">Profile</h2>
+                    <p class="lead">I am a young energetic hard worker, ready to learn, ready for a challenge, I naturally push myself to maximum effort to ensure success.</p>
+                    <p>I have a friendly and mature personality with a analytic approach to work. I am also accustomed to working under pressure and wish to increase my IT knowledge and communication skills.</p>
+                    
+                    <div class="contact-info mt-4">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>danyal.yaqoob05@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <span>+44 7712 345678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>Sheffield, United Kingdom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">EG, Blackburn</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="job-title">IT Support & PMO Office</span>
+                        <span class="job-period">2023 - 2024</span>
+                    </div>
+                    <p>I worked for EG for a year due to my college course requiring 315 hours of work experience. My responsibilities included:</p>
+                    <ul>
+                        <li>Managing tickets and fixing hardware issues</li>
+                        <li>Rebooting hardware to improve software maintenance</li>
+                        <li>Working in PMO (Project Management Office) focusing on SDLC</li>
+                        <li>Attending client meetings and improving collaboration skills</li>
+                        <li>Managing deadlines and communicating with global clients</li>
+                    </ul>
+                    <p>This role significantly improved my understanding of industry work in a fast-paced environment while developing my communication skills and confidence.</p>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">SIA Security</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="job-title">Door Supervisor</span>
+                        <span class="job-period">2022 - Present</span>
+                    </div>
+                    <p>I have worked in security for 2 years where I have had to effectively communicate with people to build relationships that help de-escalate potential situations. My qualifications include:</p>
+                    <ul>
+                        <li>SIA Level 2 Door Supervisor certification</li>
+                        <li>First Aid Certificate from SIA</li>
+                        <li>Experience in conflict resolution and management</li>
+                        <li>Responsibility for safety and security in various venues</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Boohoo, Burnley</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="job-title">Warehouse Operations</span>
+                        <span class="job-period">2023</span>
+                    </div>
+                    <p>I was employed in the picking department working 12-hour weekend shifts. My responsibilities included:</p>
+                    <ul>
+                        <li>Scanning customer orders and transporting products from warehouse to packing</li>
+                        <li>Meeting and exceeding performance targets consistently</li>
+                        <li>Gaining experience in the packing department</li>
+                        <li>Working efficiently in a fast-paced environment</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Farmhouse Biscuits, Nelson</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="job-title">Production Worker</span>
+                        <span class="job-period">2024</span>
+                    </div>
+                    <p>I worked for a month in an intense production environment where efficiency was paramount. My responsibilities included:</p>
+                    <ul>
+                        <li>Packing biscuits in a high-pressure environment</li>
+                        <li>Maintaining quality control with no room for error</li>
+                        <li>Communicating effectively with team members about work and positioning</li>
+                        <li>Adapting to a fast-paced manufacturing setting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Longley Hall Convenience Store, Sheffield</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="job-title">Retail Assistant</span>
+                        <span class="job-period">2020</span>
+                    </div>
+                    <p>I frequently help at my father's store, gaining valuable retail experience including:</p>
+                    <ul>
+                        <li>Conducting stock takes and inventory counts</li>
+                        <li>Providing customer service for purchases and returns</li>
+                        <li>Assisting with day-to-day store operations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Papa's Pizza, Nelson</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="job-title">Customer Service</span>
+                        <span class="job-period">July 2021 (Summer)</span>
+                    </div>
+                    <p>I worked at Papa's Pizza for 6 weeks during summer holiday, where I developed several key skills:</p>
+                    <ul>
+                        <li>Working under high pressure to meet tight deadlines</li>
+                        <li>Maintaining low customer waiting times</li>
+                        <li>Developing communication skills through constant customer interaction at the front desk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="qualification">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4>Nelson Colne College</h4>
+                    <span class="text-muted">2022 - Present</span>
+                </div>
+                <p class="fw-bold mb-1">T-Level Development, Design and Production</p>
+                <div class="mb-3">
+                    <p class="mb-1">Year 1: Grade C</p>
+                    <p>Year 2: Expected Grade: Distinction</p>
+                </div>
+            </div>
+            
+            <div class="qualification">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4>Pendle Vale College, Nelson</h4>
+                    <span class="text-muted">September 2017 - June 2022</span>
+                </div>
+                <p class="fw-bold mb-1">GCSE Results:</p>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1">Maths: 5</p>
+                        <p class="mb-1">English: 5</p>
+                        <p class="mb-1">Double Science: 5</p>
+                        <p class="mb-1">Religious Studies: 6</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1">History: 5</p>
+                        <p class="mb-1">English Literature: 5</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qualification">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4>Duke of Edinburgh</h4>
+                    <span class="text-muted">Year 9</span>
+                </div>
+                <p>Completed the Duke of Edinburgh Silver Award, an important course introduced by Prince Philip focusing on physical health alongside mental academic strength.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Key Skills</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3">Technical Skills</h4>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Microsoft Office</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Adobe Creative Suite</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Software Troubleshooting</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Web Development</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h4 class="mb-3">Soft Skills</h4>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Problem Solving</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Teamwork</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Communication</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Work Under Pressure</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h4 class="mb-3">Highlighted Skills</h4>
+                <div class="skill-item">Strong problem-solving</div>
+                <div class="skill-item">Analytical thinking</div>
+                <div class="skill-item">IT literacy</div>
+                <div class="skill-item">Microsoft Office</div>
+                <div class="skill-item">Adobe Creative Suite</div>
+                <div class="skill-item">Software troubleshooting</div>
+                <div class="skill-item">Teamwork</div>
+                <div class="skill-item">Communication</div>
+                <div class="skill-item">Working under pressure</div>
+                <div class="skill-item">Meeting deadlines</div>
+                <div class="skill-item">Quick learner</div>
+                <div class="skill-item">Software development</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities and Interests Section -->
+    <section id="interests" class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Activities & Interests</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Sports & Fitness</h4>
+                            <p>I love sports, particularly:</p>
+                            <ul>
+                                <li>Football</li>
+                                <li>Cricket</li>
+                                <li>Boxing</li>
+                            </ul>
+                            <p>I have recently joined the gym to improve my physical strength and overall fitness.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Technology & IT</h4>
+                            <p>I have a strong interest in:</p>
+                            <ul>
+                                <li>Coding</li>
+                                <li>Game development</li>
+                                <li>Technical aspects of software development</li>
+                            </ul>
+                            <p>In the future, I would like to pursue a career in IT as it opens a wide range of career paths and opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">SIA Level 2 Door Supervisor</h4>
+                            <p class="mb-2">Highfield Qualifications</p>
+                            <p class="mb-2">Qualification Number: 603/5531/1</p>
+                            <p class="mb-2">Date of Award: 03 September 2024</p>
+                            <p>Certificate Number: SEC8305108</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <img src="/cv-pic.jpg" alt="SIA Course Certificate" class="certificate-img">
+                        <p class="mt-2 text-muted">Highfield Level 2 Award for Door Supervisors in the Private Security Industry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Get In Touch</h4>
+                            <p>I'm currently looking for new opportunities in the IT sector. Please feel free to contact me using the information provided.</p>
+                            
+                            <div class="mt-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-envelope me-3 text-primary fa-lg"></i>
+                                    <span>danyal.yaqoob05@gmail.com</span>
+                                </div>
+                                
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-phone me-3 text-primary fa-lg"></i>
+                                    <span>+44 7546 021675</span>
+                                </div>
+                                
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt me-3 text-primary fa-lg"></i>
+                                    <span>Nelson, United Kingdom</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <!-- Contact Section -->
+<section id="contact" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <!-- ... (keep existing contact card the same) ... -->
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Send a Message</h4>
+                        <!-- Modified Form Start -->
+                        <form id="contactForm" action="https://formspree.io/f/xwplankg" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="_subject" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            
+                            <!-- Add hidden honeypot field for spam protection -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            
+                            <div class="form-loading">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2">Sending message...</p>
+                            </div>
+                            
+                            <div class="form-success">
+                                <i class="fas fa-check-circle fa-2x mb-2"></i>
+                                <p>Thank you! Your message has been sent successfully.</p>
+                            </div>
+                            
+                            <div class="form-error">
+                                <i class="fas fa-exclamation-circle fa-2x mb-2"></i>
+                                <p>Something went wrong. Please try again later.</p>
+                            </div>
+                        </form>
+                        <!-- Modified Form End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </section>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const loading = form.querySelector('.form-loading');
+            const success = form.querySelector('.form-success');
+            const error = form.querySelector('.form-error');
+    
+            // Show loading state
+            loading.style.display = 'block';
+            success.style.display = 'none';
+            error.style.display = 'none';
+    
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+    
+                if (response.ok) {
+                    form.reset();
+                    success.style.display = 'block';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                error.style.display = 'block';
+            } finally {
+                loading.style.display = 'none';
+            }
+        });
+    </script>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="mb-4">
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+            <p>&copy; 2025 Danyal Yaqoob. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Back to top button
+        window.onsc
